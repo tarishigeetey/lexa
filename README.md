@@ -1,4 +1,4 @@
-# Lexa: Situational Conversational AI
+# 💬 Lexa: #situational conversational AI
 
 🚀 **Purpose**
 
