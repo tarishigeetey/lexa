@@ -1,8 +1,8 @@
-# 💬 Lexa: #situational conversational AI
+# 💬 Lexa: #situational conversational ai
 
 🚀 **Purpose**
 
-Lexa is a situational conversational AI designed to help users learn and practice German through interactive, real-world scenarios. Whether ordering food, shopping, or engaging in other daily activities, Lexa provides immersive conversations to enhance language proficiency. With voice interactions, side-by-side English translations, and adaptable difficulty levels, Lexa offers an engaging way to master German.
+Lexa is a situational conversational AI designed to help users learn and practice German through interactive, real-world scenarios. Whether ordering food, shopping, or engaging in other daily activities, Lexa provides immersive conversations to enhance language proficiency. With voice interactions, side-by-side English translations, Lexa offers an engaging way to master German.
 
 🛠️ **Tech-Stack**
 
