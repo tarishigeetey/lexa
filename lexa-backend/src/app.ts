@@ -12,7 +12,7 @@ const run = async () => {
   const app = express()
 
   app.use(cors({
-    origin: 'http://localhost:3000', // Allow only this origin
+    origin: process.env.FRONTEND_URL; // Allow only this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true, // Allow cookies and credentials
   }))
