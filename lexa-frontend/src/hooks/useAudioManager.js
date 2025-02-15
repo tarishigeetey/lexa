@@ -5,16 +5,36 @@ export const useAudioManager = () => {
   const audioRef = useAudio();
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const playAudio = useCallback(async (audioSrc) => {
-    if (!audioSrc || !audioRef.current) return;
+  const playAudio = useCallback(
+    async (audioSrc) => {
+      if (!audioSrc || !audioRef.current) return;
 
-    try {
+      try {
+        // Pause the audio only if it's playing
+        if (!audioRef.current.paused) {
+          await audioRef.current.pause();
+        }
+
+        // Prevent unnecessary src updates
+        if (audioRef.current.src !== audioSrc) {
+          audioRef.current.src = audioSrc;
+        }
+
+        // Start playback
+        await audioRef.current.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.error('Error playing audio:', err);
+        setIsPlaying(false);
+      }
+    },
+    [audioRef]
+  );
+
+  const stopAudio = useCallback(() => {
+    if (audioRef.current) {
       audioRef.current.pause();
-      audioRef.current.src = '';
-      audioRef.current.src = audioSrc;
-      await audioRef.current.play();
-    } catch (err) {
-      throw err;
+      setIsPlaying(false);
     }
   }, [audioRef]);
 
@@ -22,6 +42,7 @@ export const useAudioManager = () => {
     audioRef,
     isPlaying,
     setIsPlaying,
-    playAudio
+    playAudio,
+    stopAudio,
   };
 };
